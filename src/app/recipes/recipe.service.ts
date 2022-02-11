@@ -8,12 +8,12 @@ export class RecipeService{
     recipeSelected = new EventEmitter<Recipe>();
 
     private recipes: Recipe[] = [
-        new Recipe('A Test Recipe', "This is a test", 
+        new Recipe('A Test Recipe', "This is a test",
         'http://foodjaunts.com/wp-content/uploads/2012/04/Spring-Shrimp-Salad-Overview-e1335228914177.jpg', [
             new Ingredient('Shrimp', 1),
             new Ingredient('Olive Oil', 2)
         ]),
-        new Recipe('Another Test Recipe', "This is also a test", 
+        new Recipe('Another Test Recipe', "This is also a test",
         'http://foodjaunts.com/wp-content/uploads/2012/04/Spring-Shrimp-Salad-Overview-e1335228914177.jpg', [
             new Ingredient('Fat', 2000),
             new Ingredient('Saddness', 2)
@@ -24,6 +24,10 @@ export class RecipeService{
 
     getRecipes(){
         return this.recipes.slice();
+    }
+
+    getRecipe(index: number){
+      return this.recipes[index];
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]){
